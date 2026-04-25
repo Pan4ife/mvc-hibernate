@@ -7,9 +7,18 @@
 </head>
 <body>
 <div>
-    <th:block th:each="msg : ${messages}">
-        <h1 th:text="${msg}"></h1>
-    </th:block>
+        <table>
+            <tr>  <!-- строка заголовков -->
+                <th>Model</th>
+                <th>Series</th>
+                <th>Year</th>
+            </tr>
+            <tr th:each="car : ${cars}">
+            <td th:text="${car.model}"></td>
+                <td th:text="${car.series}"></td>
+                <td th:text="${car.year}"></td>
+            </tr>
+        </table>
 </div>
 </body>
 </html>
