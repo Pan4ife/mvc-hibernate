@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Список пользователей <3</title>
@@ -24,7 +24,9 @@
         <td th:text="${user.lastName}"></td>
         <td th:text="${user.age}"></td>
         <td>
-            <a th:href="@{/users/{id}/edit(id=${user.id})}">Редактировать</a>
+            <form th:action="@{/users/{id}/edit(id=${user.id})}" method="get" style="display:inline">
+                <button type="submit">Редактировать</button>
+            </form>
             <form th:action="@{/users/{id}/delete(id=${user.id})}" method="post" style="display:inline">
                 <button type="submit">Удалить</button>
             </form>

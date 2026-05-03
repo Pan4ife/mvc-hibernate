@@ -8,13 +8,13 @@
 <h1>Создание нового пользователя</h1>
 
 <form th:action="@{/users}" th:object="${user}" method="post">
-    Имя: <input type="text" th:field ="*{name}"><br>
+    Имя: <input type="text" th:field="*{name}" pattern="[A-Za-zА-Яа-я]+"><br>
     <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red"></span>
     <br>
-    Фамилия: <input type="text" th:field ="*{lastName}"><br>
+    Фамилия: <input type="text" th:field="*{lastName}" pattern="[A-Za-zА-Яа-я]+"><br>
     <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" style="color: red"></span>
     <br>
-    Возраст: <input type="number" th:field ="*{age}">
+    Возраст: <input type="number" th:field="*{age}">
     <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}" style="color: red"></span>
     <br>
     <input type="submit" value="Сохранить!">

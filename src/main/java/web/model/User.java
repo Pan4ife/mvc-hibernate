@@ -13,11 +13,13 @@ public class User {
 
     @NotBlank(message = "Имя не должно быть пустым")
     @Size(min = 1, max = 50, message = "Имя должно быть от 1 до 50 символов")
+    @Pattern(regexp = "^[a-zA-Zа-яА-Я]+$", message = "Имя должно содержать только буквы")
     @Column
     private String name;
 
     @NotBlank(message = "Фамилия не должна быть пустой")
     @Size(min = 1, max = 50, message = "Фамилия должна быть от 1 до 50 символов")
+    @Pattern(regexp = "^[a-zA-Zа-яА-Я]+$", message = "Фамилия должно содержать только буквы")
     @Column
     private String lastName;
 
